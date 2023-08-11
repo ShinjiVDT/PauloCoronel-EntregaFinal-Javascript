@@ -2,7 +2,7 @@
 
 /*---CARRITO---*/
 
-const librosEnCarrito = JSON.parse(localStorage.getItem("librosEnCarritocarrito"))
+const librosEnCarrito = JSON.parse(localStorage.getItem("librosEnCarrito"))
 const carritoVacio = document.querySelector("#carrito-vacio")
 const containerCarrito = document.querySelector("#container__carrito")
 const carritoAcciones = document.querySelector("#carrito__acciones")
