@@ -1,16 +1,4 @@
 
-
-
-function checkLoginStatus() {
-    const jsonString = localStorage.getItem("loginStatus");
-    if (jsonString) {
-        const loginStatus = JSON.parse(jsonString);
-        return loginStatus.isLoggedIn === true;
-    }
-    return false;
-}
-
-
 const containerProductos = document.querySelector("#container-prductos");
 const tipo = document.querySelectorAll(".tipo");
 const titulo = document.querySelector("#titulo");
@@ -91,18 +79,12 @@ titulo.innerText=categoriaTipo.categoria
 
 let carrito
 
-if (checkLoginStatus()) {
     let storage =JSON.parse(localStorage.getItem("librosEnCarrito"));
-    console.log("lo");
     if(storage){
         carrito=storage;
     }else{
-         carrito=[];
-    }   
-} else {
-    carrito=[];
-    // Realiza acciones para usuarios no autenticados
-}
+         carrito=[];}
+
 
 
 
@@ -119,15 +101,7 @@ carrito[indexLibro].cantidad+=1
 }
 actualizarCantidad()
 
-
-if (checkLoginStatus()) {
-    localStorage.setItem("librosEnCarrito",JSON.stringify(carrito));
-} else {
-    sessionStorage.setItem("librosEnCarrito",JSON.stringify(carrito));
-
-}
-
-
+localStorage.setItem("librosEnCarrito",JSON.stringify(carrito));
 
 }
 actualizarCantidad()

@@ -1,31 +1,12 @@
 
 
 let librosEnCarrito;
-function checkLoginStatus() {
-    const jsonString = localStorage.getItem("loginStatus");
-    if (jsonString) {
-        const loginStatus = JSON.parse(jsonString);
-        return loginStatus.isLoggedIn === true;
-    }
-    return false;
-}
-
-// Ejemplo de cómo usar la función para verificar el estado de inicio de sesión
-if (checkLoginStatus()) {
-    librosEnCarrito = JSON.parse(localStorage.getItem("librosEnCarrito"));
-    console.log("lo");
-    // Realiza acciones para usuarios autenticados
-} else {
-    librosEnCarrito = JSON.parse(sessionStorage.getItem("librosEnCarrito"));
-    console.log("se");
-    // Realiza acciones para usuarios no autenticados
-}
 
 /*---CARRITO---*/
 
+ 
 
-
-
+librosEnCarrito = JSON.parse(localStorage.getItem("librosEnCarrito"));
 const carritoVacio = document.querySelector("#carrito-vacio")
 const containerCarrito = document.querySelector("#container__carrito")
 const carritoAcciones = document.querySelector("#carrito__acciones")
@@ -113,14 +94,14 @@ function eliminarDelCarrito(e) {
     librosEnCarrito.splice(indexLibroEliminado, 1);
     cargarCarrito()
     localStorage.setItem("librosEnCarrito", JSON.stringify(librosEnCarrito))
-    sessionStorage.setItem("librosEnCarrito", JSON.stringify(librosEnCarrito))
+
 }
 vaciarTodo.addEventListener("click", vaciarCarrito);
 
 function vaciarCarrito() {
     librosEnCarrito.length = 0;
     localStorage.setItem("librosEnCarrito", JSON.stringify(librosEnCarrito));
-    sessionStorage.setItem("librosEnCarrito", JSON.stringify(librosEnCarrito));
+
     cargarCarrito()
 }
 cargarCarrito()
@@ -154,7 +135,7 @@ function restar(e) {
     }
     cargarCarrito()
     localStorage.setItem("librosEnCarrito", JSON.stringify(librosEnCarrito))
-    sessionStorage.setItem("librosEnCarrito", JSON.stringify(librosEnCarrito))
+
 }
 
 
@@ -176,6 +157,6 @@ function sumar(e) {
 
     cargarCarrito()
     localStorage.setItem("librosEnCarrito", JSON.stringify(librosEnCarrito))
-    sessionStorage.setItem("librosEnCarrito", JSON.stringify(librosEnCarrito))
+   
 }
 
