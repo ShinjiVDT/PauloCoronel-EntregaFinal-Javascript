@@ -6,9 +6,10 @@
 
 }
 
-small{
+small {
   text-align: center;
 }
+
 ul {
   list-style-type: none;
 }
@@ -43,7 +44,7 @@ a {
 
 .libro {
 
- z-index: 999;
+  z-index: 999;
   width: 230px;
   height: 300px;
   background: var(--bg-color);
@@ -55,7 +56,8 @@ a {
   justify-content: space-between;
   padding: 10px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  align-items: center;}
+  align-items: center;
+}
 
 
 
@@ -109,10 +111,10 @@ a {
 }
 
 .libro-agregar img {
-    width: auto;
-    height: 100%;
+  width: auto;
+  height: 100%;
 }
- 
+
 .libro-img:hover {
   transform: translateY(-3px);
 }
@@ -134,13 +136,19 @@ a {
 .container {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  background: linear-gradient(171deg, rgba(143,212,223,1) 0%, rgba(0,47,106,1) 100%);
+  background: linear-gradient(171deg, rgba(143, 212, 223, 1) 0%, rgba(0, 47, 106, 1) 100%);
+}
+
+.containerr {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background: linear-gradient(171deg, rgba(143, 212, 223, 1) 0%, rgba(0, 47, 106, 1) 100%);
 }
 
 aside {
   display: flex;
   flex-direction: column;
-  justify-content:flex-start;
+  justify-content: flex-start;
   padding: 2rem;
   padding-right: 0;
   color: var(--color2);
@@ -149,33 +157,38 @@ aside {
   height: 100vh;
 }
 
-footer{
+footer {
   position: absolute;
   bottom: 20px;
 }
+
 .footer__texto {
   color: var(--color3);
 }
 
-main { position: relative;
+main {
+  position: relative;
   background-color: var(--color3);
-margin: 2% 3% 2% 0;
+  margin: 2% 3% 2% 0;
   background-image: url(../imagenes/nubestienda.svg);
   border-radius: 50px;
   padding-top: 7%;
   padding-bottom: 7%;
 }
-.logo{
+
+.logo {
   width: 60%;
   opacity: .7;
   margin-bottom: 50px;
 }
-.wave-tienda{
+
+.wave-tienda {
   opacity: 0.6;
   position: absolute;
   bottom: 0px;
   z-index: 0;
 }
+
 .productos__libro-imagen {
   width: 100%;
   height: auto;
@@ -203,11 +216,13 @@ margin: 2% 3% 2% 0;
   margin: 8%;
 }
 
-.gratis__container{
+.gratis__container {
   width: 230px;
   position: absolute;
   height: 300px;
-pointer-events: none;}
+  pointer-events: none;
+}
+
 .gratis__texto {
   text-align: center;
   width: 120px;
@@ -295,13 +310,14 @@ pointer-events: none;}
 }
 
 
-.carrito-vacio-margin{
+.carrito-vacio-margin {
   padding-left: 5%;
 }
 
 .producto__carrito-nombre {
   width: 172px;
 }
+
 .producto__carrito-izquierda {
   display: flex;
   height: 80%;
@@ -326,7 +342,7 @@ pointer-events: none;}
   align-items: center;
   height: 40px;
   position: relative;
-    z-index: 999;
+  z-index: 999;
 }
 
 .carrito__acciones-container-vaciar {
@@ -337,26 +353,26 @@ pointer-events: none;}
   align-items: center;
   justify-content: center;
   width: 100px;
-  
+
 }
 
 
 .carrito__acciones-total-container {
   display: flex;
   height: 100%;
- align-items: center;
+  align-items: center;
   flex-direction: row;
 }
 
-.carrito__acciones-total{
+.carrito__acciones-total {
   background-color: var(--color2);
   border-radius: 10px;
- margin: 10px;
- width: 130px;
- height: 100%;
- display: flex;
- justify-content: space-around;
- align-items:center
+  margin: 10px;
+  width: 130px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center
 }
 
 .carrito__acciones-comprar {
@@ -380,6 +396,7 @@ pointer-events: none;}
 .display-none {
   display: none
 }
+
 .producto__carrito-cantidad {
   width: 50px;
   display: flex;
@@ -404,3 +421,142 @@ pointer-events: none;}
   background-color: white;
   border: none;
 }
+
+.login-button{
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  z-index: 9999;
+  right: 10px;
+  margin: 20px;
+  border: none;
+  border-radius: 50%;
+  background-image: url(../imagenes/iconos_tienda/icons8-user-24.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+  border: 1px solid #94C2D3;
+}
+
+
+.login-box h2 {
+  margin-top: 0;
+}
+
+
+
+
+/**/
+
+.formulario {
+  background-color: #4e88aa;
+  border-radius: 7px;
+  width: 350px;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  right: 40px;
+  top: 10px;
+
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  background:  var(--color2);
+  padding: 10px;
+  font-family: inherit;
+  font-size: 17px;
+  margin-top: 15px;
+  border: 0;
+  border-radius: 3px;
+
+
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:active {
+  transform: scale(1.036);
+}
+
+.text p {
+  padding-top: 50px;
+}
+
+.formulario h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.formulario a {
+  text-decoration: none;
+  color: rgb(27, 93, 235);
+}
+
+.form-control {
+  position: relative;
+  margin: 50px 0 20px;
+  width: 200px;
+}
+
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  display: block;
+ 
+  padding: 10px 0;
+  font-size: 18px;
+  color: #fff;
+
+}
+
+
+.input100{
+  width: 100%;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom: lightblue;
+}
+
+.animacion-label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+}
+
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span,
+.form-control input:valid+label span {
+  color: var(--color2);
+  transform: translateY(-25px);
+  font-size: 15px;
+}
+
+
+.check{
+  width: 20px;
+}
+.check-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ .label-check{
+    font-size: 12px;
+  }

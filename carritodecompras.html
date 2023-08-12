@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./carrito.js" defer></script>
+    <script src="./usuario.js" defer></script>
+    <script  src="./carrito.js" defer></script>
     <script src="./datos/libros.js" defer></script>
     <title>Tienda</title>
 </head>
 
 <body>
     <div class="container">
+        <button id="loginButton" class="login-button"></button>
         <aside>
             <header>
                 <svg class="logo"
@@ -133,6 +135,26 @@
         </aside>
 
         <main>
+            <div id="loginBox" class="formulario">
+                <form id="loginForm">
+                    <div class="form-control">
+                        <input class="input100" type="text" id="email" required>
+                        <label class="animacion-label">Email</label>
+                    </div>
+                    <div class="form-control">
+                        <input class="input100" type="password" id="password" required>
+                        <label class="animacion-label">password</label><br>
+                        <div class="check-container">
+                            <input type="checkbox" class="check" id="checkStorage"> <label class="label-check" for="checkStorage">Desea guardar la contraseña?</label>
+                          </div>
+                        <button class="btn">Login</button>
+                        
+                    </div>
+                </form>
+            </div>
+
+
+
             <h2 class="titulo">Carrito de compras</h2>
             <p id="carrito-vacio" class="carrito-vacio-margin">tu carrito está vacío</p>
             <div id="container__carrito" class="container__carrito">

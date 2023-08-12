@@ -1,4 +1,16 @@
 
+
+
+function checkLoginStatus() {
+    const jsonString = localStorage.getItem("loginStatus");
+    if (jsonString) {
+        const loginStatus = JSON.parse(jsonString);
+        return loginStatus.isLoggedIn === true;
+    }
+    return false;
+}
+
+
 const containerProductos = document.querySelector("#container-prductos");
 const tipo = document.querySelectorAll(".tipo");
 const titulo = document.querySelector("#titulo");
@@ -9,8 +21,7 @@ const libroGratis = document.querySelector("#libro-gratis");
 function cargarlibros(seleccion) {
     containerProductos.innerHTML = "";
     let sel= seleccion.filter(libro => libro.tipo === "animado")
-    if (sel.length > 0){console.log("aa")
-  
+    if (sel.length > 0){  
     const gratis = document.createElement("div");
     gratis.classList.add("libro")
     gratis.innerHTML = `
@@ -28,7 +39,7 @@ function cargarlibros(seleccion) {
         <div class="libro-price"><span>$</span>0</div>
 
      
-        <button class="libro-agregar" id="libro-gratis"  onclick=window.location='./carritodecompras.html'>    
+        <button class="libro-agregar" id="libro-gratis"  onclick=window.location='./Cuento/index.html'>    
         <img src="./imagenes/iconos_tienda/ojo.png" alt="icono carrito">   
         </button>
     </div>
@@ -79,19 +90,19 @@ titulo.innerText=categoriaTipo.categoria
 })
 
 let carrito
-/* let storage=localStorage.getItem("librosEnCarrito");
-if(storage){
-    librosEnCarrito=JSON.parse(storage)
-    actualizarCantidad()
-}else{
+
+if (checkLoginStatus()) {
+    let storage =JSON.parse(localStorage.getItem("librosEnCarrito"));
+    console.log("lo");
+    if(storage){
+        carrito=storage;
+    }else{
+         carrito=[];
+    }   
+} else {
     carrito=[];
-} */
-  const storage =JSON.parse(localStorage.getItem("librosEnCarrito"));
-if(storage){
-    carrito=storage;
-}else{
-     carrito=[];
-}   
+    // Realiza acciones para usuarios no autenticados
+}
 
 
 
@@ -103,12 +114,21 @@ if(carrito.some(libro=>libro.id === idBtn)){
 const indexLibro= carrito.findIndex(libro=>libro.id===idBtn)
 carrito[indexLibro].cantidad+=1
 }else{
-    agregado.cantidad=+1
+    agregado.cantidad = 1;
     carrito.push(agregado);
 }
 actualizarCantidad()
 
-localStorage.setItem("librosEnCarrito",JSON.stringify(carrito));
+
+if (checkLoginStatus()) {
+    localStorage.setItem("librosEnCarrito",JSON.stringify(carrito));
+} else {
+    sessionStorage.setItem("librosEnCarrito",JSON.stringify(carrito));
+
+}
+
+
+
 }
 actualizarCantidad()
 function actualizarCantidad(){
